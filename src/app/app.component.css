@@ -1,0 +1,96 @@
+
+/*Styling for h1, p and game-board */
+h1 , p {
+	display:block;
+}
+
+/*Size tile images*/
+.md-48 { font-size: 48px; }
+
+/* Styling for overlay of tiles */
+.overlay {
+	color: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  border-radius: 8px;
+  background: darkgrey;
+  opacity: 1;
+  transition-property: opacity;
+	transition-duration: .5s;
+}
+.show {
+	opacity: 0;
+}
+
+/*Game board styling*/
+#gameBoard {
+	width: 347px;
+	height: 181px;
+	margin: 20px auto;
+  background: lightgray;
+  padding: 15px 0 0 15px;
+	border-radius: 10px;
+}
+
+/*Game board li styling*/
+ul .tile {
+  height: 68px;
+  width: 68px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  background: white;
+  margin: 0 15px 15px 0;
+	padding: 10px;
+  border-radius: 8px;
+  vertical-align: center;
+	position: relative;
+	transition-property: background-color color;
+	transition-duration: .3s;
+}
+#gameBoard li:hover {
+	cursor: pointer;
+}
+.selected {
+	color: blue;
+}
+
+.match{
+	background-color: lightgreen;
+	color: white;
+}
+
+/* Button styling */
+button {
+  height: 50px;
+  padding: 0 50px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  border-radius: 7px;
+  background-color: lightgray;
+  border: none;
+  margin: 25px 0;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+button:hover {
+    cursor: pointer;
+}
+button:focus{
+	outline:none;
+}
+
+/*Remove margins of 4th child in the game board*/
+#gameBoard:nth-child(4n) {
+	margin: 0;
+}

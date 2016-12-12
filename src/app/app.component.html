@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Tile Matching Game</h1>
+<p>Click the matching tiles</p>
+
+<ul id = 'gameBoard'>
+  <li *ngFor="let tile of tiles" class="tile" (click)="onSelect(tile)" [class.selected]="tile === selectedTile">
+    <i [class]= "tile.class">{{tile.name}}</i>
+    <div class="overlay" [class.show]="tile === selectedTile"></div>
+  </li>
+</ul>
+<button id='newGame'>New Game</button>
