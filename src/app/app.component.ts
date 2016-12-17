@@ -6,6 +6,19 @@ export class Tile {
   class: string;
 }
 
+function shuffle(arr) {
+  var m = arr.length, t, i;
+  // While there remain elements to shuffle…
+  while(m){
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+    // And swap it with the current element
+    t = arr[m];
+    arr[m]=arr[i];
+    arr[i] = t;
+  }
+  return arr;
+}
 const TILES: Tile[] = [
   { id: 1, name:'android', class: "material-icons md-48"},
   { id: 2, name: 'alarm', class: "material-icons md-48"},
@@ -32,4 +45,8 @@ export class AppComponent {
     this.selectedTile = tile;
   }
 
+
+  newGame(): void {
+    shuffle(this.tiles);
+  }
 }
