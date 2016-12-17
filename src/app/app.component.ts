@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
-export class Tile {
-  id: number;
-  name: string;
-  class: string;
-}
+import { Tile } from './tile';
+
+import { CompareClicksService } from './compare-clicks.service';
 
 function shuffle(arr) {
   var m = arr.length, t, i;
@@ -45,8 +43,15 @@ export class AppComponent {
     this.selectedTile = tile;
   }
 
+  constructor(private compareClicksService: CompareClicksService) { }
+
+  compareClicks(tile: Tile): void {
+    this.compareClicksService.compareClicks(this.selectedTile);
+  }
+
 
   newGame(): void {
     shuffle(this.tiles);
   }
+
 }
