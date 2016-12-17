@@ -2,9 +2,9 @@
 <p>Click the matching tiles</p>
 
 <ul id = 'gameBoard'>
-  <li *ngFor="let tile of tiles" class="tile" (click)="onSelect(tile)" (click)="compareClicks()" [class.selected]="tile === selectedTile">
+  <li *ngFor="let tile of tiles" class="tile" (click)="onSelect(tile)" [class.selected]="tile === selectedTile">
     <i [class]= "tile.class">{{tile.name}}</i>
-    <!--<div class="overlay" [class.show]="tile === selectedTile"></div>-->
+    <div class="overlay" [class.show]="tile === selectedTile"></div>
   </li>
 </ul>
 <button id='newGame' (click)="newGame()">New Game</button>
