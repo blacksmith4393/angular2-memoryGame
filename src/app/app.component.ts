@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
-export class Tile {
-  id: number;
-  name: string;
-  class: string;
-}
+import { Tile } from './tile';
+
+import { CompareClicksService } from './compare-clicks.service';
 
 const TILES: Tile[] = [
   { id: 1, name:'android', class: "material-icons md-48"},
@@ -30,6 +28,12 @@ export class AppComponent {
 
   onSelect(tile: Tile): void {
     this.selectedTile = tile;
+  }
+
+  constructor(private compareClicksService: CompareClicksService) { }
+
+  compareClicks(tile: Tile): void {
+    this.compareClicksService.compareClicks(this.selectedTile);
   }
 
 }
