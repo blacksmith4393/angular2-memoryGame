@@ -39,12 +39,11 @@ export class AppComponent {
 
   tiles = TILES;
 
-  selectedTile: Tile;
+  clickedTile: Tile;
 
-  onSelect(tile: Tile): void {
-    this.selectedTile = tile;
+  onClick(tile: Tile): void {
+    this.clickedTile = tile;
   }
-
 
   newGame(): void {
     shuffle(this.tiles);
