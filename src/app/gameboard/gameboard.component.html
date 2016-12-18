@@ -1,0 +1,6 @@
+<ul id = 'gameBoard'>
+  <li *ngFor="let tile of tiles" class="tile" (click)="onClick(tile)" [class.selected]="tile === clickedTile">
+    <i [class]= "tile.class">{{tile.name}}</i>
+    <div class="overlay" [class.show]="tile === clickedTile"></div>
+  </li>
+</ul>
